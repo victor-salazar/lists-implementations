@@ -25,7 +25,5 @@ void arraylist_clear(ArrayList *list); //Se borran todos los elementos de la lis
 
 //Funciones usadas para manipular los arreglos dinámicos
 void arraylist_ensure_capacity(ArrayList *list, int min_capacity); //Pide más memoria si se está llenando
-void arraylist_trim_to_size(ArrayList *list); //Ajusta el tamaño dinámico usado por los elementos,
-ArrayList arraylist_clone(ArrayList *list); //Nos sirve para copiar una lista a otra
 
 #endif
