@@ -83,6 +83,38 @@ void arraylist_insert(ArrayList *list, void *element, int index){
 	list->size++;
 }
 	
+void *arraylist_get(ArrayList *list, int index){
+	if(list == NULL || index > list->size || index < 0){
+		return;
+	}
+	return list->data[index];
+}
+	
+int arraylist_remove(ArrayList *list, int index){
+	if(list == NULL || index > list->size || index < 0){
+		return NULL;
+	}
+	free(list->data[index]);
+	for(int i=index; i<list->size; i++){
+		list->data[i] = list->data[i+1];
+	}
+	list->size--;
+	list->data[list->size] = NULL;
+	return 1;
+}
+	
+void arraylist_ensure_capacity(ArrayList *list, int min_capacity){
+	if(list == NULL || min_capacity <= list->capacity){
+		return;
+	}
+	
+	void **new_data = (void**)realloc(list->data, sizeof(void*) * min_capacity);
+	if(new_data == NULL){
+		printf("Error al reasignar memoria\n");
+		return;
+	}
+}
+	
 void arraylist_clear(ArrayList * list){
 	if(list == NULL){
 		return;
