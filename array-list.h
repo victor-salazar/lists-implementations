@@ -1,5 +1,5 @@
-#ifndef ARRAY-LIST_H
-#define ARRAY-LIST_H
+#ifndef ARRAY_LIST_H
+#define ARRAY_LIST_H
 
 typedef struct{
 	void **data; //Aqui se almacenan los elementos genericos
@@ -17,7 +17,7 @@ ArrayList* arraylist_create(int initial_capacity, int element_size);
 void arraylist_destroy(ArrayList *list);
 
 //Operaciones básicas que toda lista debe llevar
-void arraylist_add(ArrayList *list; void *element); //Agrega un elemento al final de la lista 
+void arraylist_add(ArrayList *list, void *element); //Agrega un elemento al final de la lista 
 void arraylist_insert(ArrayList *list, void *element, int index); //Agrega un elemento en la posición 
 void *arraylist_get(ArrayList *list, int index); //Obtenemos el elemento en la posición index de la lista
 int arraylist_remove(ArrayList *list, int index); //Se quita el elemento en la posición index de la lista
