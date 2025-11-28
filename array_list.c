@@ -4,7 +4,7 @@
 #include "array-list.h"
 
 //Los array list empiezan con un numero minimo de elementos que seria esta constante
-#define DEFAULT_CAPACITY 3
+#define DEFAULT_CAPACITY 10
 //Cada que se llene la lista, esta va a crecer, pero no sumandole su capacidad por defecto
 //Sino que va creciendo linealmente segun las necesidades
 #define GROWH_FACTOR 2
@@ -13,7 +13,7 @@ ArrayList* arraylist_create(int initial_capacity, int element_size){
 	//El desarrollador puede escoger una capacidad inicial custom, pero si no la define 
 	//Se va con la capacidad por defecto
 	if(initial_capacity <= 0){
-		initial_capacity =DEFAULT_CAPACITY;
+		initial_capacity = DEFAULT_CAPACITY;
 	}
 	
 	ArrayList *list = (ArrayList*)malloc(sizeof(ArrayList));
