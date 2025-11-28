@@ -4,7 +4,7 @@
 
 
 int main(){
-	ArrayList *list = arraylist_create(10, sizeof(int));
+	ArrayList *list = arraylist_create(3, sizeof(int));
 	
 	int age = 17;
 	int engineering_students = 80; 
